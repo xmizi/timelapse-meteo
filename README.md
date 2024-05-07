@@ -21,7 +21,7 @@ Službu není třeba startovat ručně - o to se stará cron.
 
 Skript pro stažení aktuálních údajů, ze kterých se zjišťuje nautický úsvit a západ se spouští každý den po půlnoci (stačí 1x denně - neriskuje se ban pro časté přístupy k API)
 ```
-01 00 * * *  root /opt/kamera/bin/get-sunrise.sh
+01 00 * * *  root /opt/camera/bin/get-sunrise.sh
 ```
 
 Každou minutu se kontroluje zda služba běží, a pokud je čas v rozmezí nastaveném pro nahrávání, spustí ji.
