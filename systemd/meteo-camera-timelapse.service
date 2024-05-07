@@ -1,0 +1,14 @@
+[Unit]
+Description=stream meteokamery
+
+[Service]
+KillMode=process
+User=root
+Group=root
+Type=simple
+EnvironmentFile=/etc/default/meteo-camera-timelapse
+ExecStart=/usr/bin/ffmpeg -i http://{IP}:81/stream $PARAMETR
+StandardOutput = file:/tmp/meteo-camera-timelapse.log
+
+[Install]
+WantedBy=multi-user.target
