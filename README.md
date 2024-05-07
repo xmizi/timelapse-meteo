@@ -6,13 +6,13 @@ mkdir -p /opt/camera/bin
 mkdir -p /opt/camera/tmp
 mkdir -p /opt/camera/timelapse
 ```
-  Skript camera-timelapse.sh se uloží do /opt/camera/bin. Zajistí spuštění služby v období po nautickémn svítání Slunce, a ukončí po nautickém západu Slunce. Vytvořené video se pak přejmenuje podle aktuálního data a přesune do /opt/camera/timelapse.
+  Skript _camera-timelapse.sh_ se uloží do _/opt/camera/bin_. Zajistí spuštění služby v období po nautickémn svítání Slunce, a ukončí po nautickém západu Slunce. Vytvořené video se pak přejmenuje podle aktuálního data a přesune do _/opt/camera/timelapse_.
 
 * systemd služba:
 
-  soubor systemd/meteo-camera-timelapse.service zkopírujte do /etc/systemd/system/
+  soubor _systemd/meteo-camera-timelapse.service_ zkopírujte do _/etc/systemd/system/_
 
-  soubor systemd/meteo-camera-timelapse zkopírujte do /etc/default/
+  soubor _systemd/meteo-camera-timelapse_ zkopírujte do _/etc/default/_
 
   reload konfigurace
 ```
@@ -20,7 +20,7 @@ systemctl daemon-reload
 ```
   Službu není třeba startovat ručně - o to se stará cron.
 
-* CRONTAB - stačí unístit soubory do /etc/cron.d/ (pozor, na konci souboru musí být prázdný řádek)
+* CRONTAB - stačí unístit soubory do _/etc/cron.d/_ (pozor, na konci souboru musí být prázdný řádek)
 
   Skript pro stažení aktuálních údajů, ze kterých se zjišťuje nautický úsvit a západ se spouští každý den po půlnoci (stačí 1x denně - neriskuje se ban pro časté přístupy k API)
 ```
