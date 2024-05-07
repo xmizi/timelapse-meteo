@@ -6,7 +6,7 @@ mkdir -p /opt/camera/bin
 mkdir -p /opt/camera/tmp
 mkdir -p /opt/camera/timelapse
 ```
-Skript camera-timelapse.sh se uloží do /opt/camera/bin. Zajistí spuštění služby v období po nautickémn svítání Slunce, a ukončí po nautickém západu Slunce. Aktuální video se pak přejmenuje podle aktuálního data , přesune do /opt/camera/timelapse.
+  Skript camera-timelapse.sh se uloží do /opt/camera/bin. Zajistí spuštění služby v období po nautickémn svítání Slunce, a ukončí po nautickém západu Slunce. Vytvořené video se pak přejmenuje podle aktuálního data a přesune do /opt/camera/timelapse.
 
 * systemd služba:
 
