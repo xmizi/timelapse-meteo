@@ -17,8 +17,16 @@ systemctl daemon-reload
 ```
 Službu není třeba startovat ručně - o to se stará cron.
 
-* do crontabu se přidá úloha
+* CRONTAB - stačí unístit soubory do /etc/cron.d/ (pozor, na konci souboru musí být prázdný řádek)
+
+Skript pro stažení aktuálních údajů, ze kterých se zjišťuje nautický úsvit a západ se spouští každý den po půlnoci
+```
+01 00 * * *  root /opt/kamera/bin/get-sunrise.sh
+```
+
+Každou minutu se kontroluje zda služba běží, a pokud je čas v rozmezí nastaveném pro nahrávání, spustí ji.
 ```
 * * * * *  root /opt/camera/bin/camera-timelapse.sh >/dev/null 2>&1
 ```
-Každou minutu se kontroluje zda služba běží, a pokud je čas v rozmezí nastaveném pro nahrávání, spustí ji.
+
+
