@@ -1,0 +1,1 @@
+PARAMETR=-vf drawtext="expansion=strftime:fontfile='/usr/share/fonts/cantarell/Cantarell-Light.otf':fontsize=30:fontcolor=white:shadowcolor=black:shadowx=2:shadowy=1:text='%Y-%m-%d\ %H\\\\:%M\\\\:%S':x=20:y=980",setpts=PTS*0.1 -c:v libx264 -preset fast -crf 20 -y /opt/kamera/timelapse/timelapse.mp4
