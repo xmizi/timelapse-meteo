@@ -15,7 +15,10 @@ ERRNO_FFMPEG=$?
 #echo $ERRNO_FFMPEG
 
 if [[ "$current_time_unix" > "$vychod" && "$current_time_unix" < "$zapad" && "$ERRNO_FFMPEG" == 1 ]]; then
-    /usr/bin/systemctl start meteo-camera-timelapse
+    if [ -f /opt/kamera/timelapse/timelapse.mp4 ]; then
+        mv /opt/kamera/timelapse/timelapse.mp4 /opt/kamera/timelapse/timelapse_$(date +%Y-%m-%d-%H_%M).mp4
+       /usr/bin/systemctl start meteo-camera-timelapse
+    fi
 elif [[ "$current_time_unix" > "$zapad" && "$ERRNO_FFMPEG" == 0 ]]; then
     /usr/bin/systemctl stop meteo-camera-timelapse
     mv /opt/camera/timelapse/timelapse.mp4 /opt/camera/timelapse/timelapse_$current_date.mp4
